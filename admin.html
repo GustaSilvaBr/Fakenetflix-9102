@@ -1,0 +1,28 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <label>
+            Title:
+        </label>
+        <input id="title">
+
+        <label>
+            Photo link
+        </label>
+        <input id="link">
+        <button onclick="upload()">
+            upload
+        </button>
+        <script>
+            function upload(){
+                var movie_title = document.getElementById("title").value;
+                var photo_link = document.getElementById("link").value;
+
+                localStorage.setItem("movie", movie_title);
+                
+            }
+        </script>
+    </body>
+</html>

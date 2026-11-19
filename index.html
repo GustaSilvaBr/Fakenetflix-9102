@@ -1,0 +1,15 @@
+<html>
+    <head>
+
+    </head>
+    <body id="body">
+        <h1>Client page</h1>
+
+        <script>
+            var movie = localStorage.getItem('movie');
+            var title_element = document.createElement('h4');
+            title_element.innerText = movie;
+            document.getElementById('body').appendChild(title_element);
+        </script>
+    </body>
+</html>
