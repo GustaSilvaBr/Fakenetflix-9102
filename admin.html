@@ -1,28 +1,100 @@
 <html>
-    <head>
 
-    </head>
-    <body>
-        <label>
-            Title:
-        </label>
-        <input id="title">
+<head>
+    <style>
+        #categories{
+            display: flex;
+            justify-content: space-between;
+            padding-left:20px;
+            padding-right:20px;
+        }
+    </style>
+</head>
 
-        <label>
-            Photo link
-        </label>
-        <input id="link">
-        <button onclick="upload()">
-            upload
-        </button>
-        <script>
-            function upload(){
-                var movie_title = document.getElementById("title").value;
-                var photo_link = document.getElementById("link").value;
+<body>
+    <a href="index.html"> Go to the client page </a>
+    <h2>Categories</h2>
+    <div id="categories">
 
-                localStorage.setItem("movie", movie_title);
-                
+        <div>
+            <h3>Comedy</h3>
+            <div>
+                <label>
+                    Title:
+                </label>
+                <input id="comedy_title">
+            </div>
+
+            <div>
+                <label>
+                    Photo link
+                </label>
+                <input id="comedy_photo">
+            </div>
+
+            <button onclick="upload_comedy()">
+                upload
+            </button>
+
+            <h4 id="comedy-movie-name"></h4>
+        </div>
+
+        <div>
+            <h3>Action</h3>
+            <div>
+                <label>
+                    Title:
+                </label>
+                <input id="title">
+            </div>
+
+            <div>
+                <label>
+                    Photo link
+                </label>
+                <input id="link">
+            </div>
+
+            <button onclick="upload()">
+                upload
+            </button>
+             <h4 id="action-movie-name"></h4>
+        </div>
+
+        <div>
+            <h3>Horror</h3>
+            <div>
+                <label>
+                    Title:
+                </label>
+                <input id="title">
+            </div>
+
+            <div>
+                <label>
+                    Photo link
+                </label>
+                <input id="link">
+            </div>
+
+            <button onclick="upload()">
+                upload
+            </button>
+
+            <h4 id="horror-movie-name"></h4>
+        </div>
+
+    </div>
+
+    <script>
+        function upload_comedy() {
+            var comedy_movie = {
+                comedy_title: document.getElementById("comedy_title").value,
+                comedy_photo: document.getElementById("comedy_photo").value
             }
-        </script>
-    </body>
+            localStorage.setItem("comedy", JSON.stringify(comedy_movie));
+        }
+    </script>
+</body>
+
 </html>

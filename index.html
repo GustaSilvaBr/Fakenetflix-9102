@@ -1,15 +1,52 @@
 <html>
-    <head>
 
-    </head>
-    <body id="body">
-        <h1>Client page</h1>
+<head>
+    <style>
+        img {
+            width: 120px;
+        }
+        #category-list{
+            display:flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
 
-        <script>
-            var movie = localStorage.getItem('movie');
-            var title_element = document.createElement('h4');
-            title_element.innerText = movie;
-            document.getElementById('body').appendChild(title_element);
-        </script>
-    </body>
+<body id="body">
+    <h1>Client page</h1>
+    <a href="admin.html"> Go to the admin page </a>
+    <div id="category-list">
+        <div id="category1">
+            <h2>Comedy movie:</h2>
+
+        </div>
+
+        <div id="category2">
+            <h2>Action movie:</h2>
+        </div>
+
+        <div id="category3">
+            <h2>Horror movie:</h2>
+        </div>
+    </div>
+    <script>
+        //Getting the movie from the local storage
+        var movie_as_string = localStorage.getItem('comedy');
+        var movie_as_json = JSON.parse(movie_as_string);
+
+        //Creating the title element
+        var movie_title_element = document.createElement('h3');
+        movie_title_element.innerText = movie_as_json.comedy_title;
+
+        //Creating the photo element
+        var movie_photo = document.createElement('img');
+        movie_photo.src = movie_as_json.comedy_photo;
+
+        //Appending both of the elements into the category 1
+        var category1_element = document.getElementById('category1');
+        category1_element.appendChild(movie_photo);
+        category1_element.appendChild(movie_title_element);
+    </script>
+</body>
+
 </html>
